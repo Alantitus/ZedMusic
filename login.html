@@ -1,0 +1,99 @@
+<head>
+    <link rel="stylesheet" href="\css\style1.css">
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" id="Name"/>
+			<input type="email" placeholder="Email"id="Email"/>
+			<input type="password" placeholder="Password" id="Password"/>
+			<button onclick="ReDirect()" type="reset">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="bi bi-facebook"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" id="email" />
+			<input type="password" placeholder="Password" id="password"/>
+			<a href="#">Forgot your password?</a>
+             <button onclick="checkEmail()" type="reset">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	
+</footer>
+<script>
+	
+    const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+const form = document.querySelector('form');
+
+function checkEmail() {
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  if (email === '') {
+    alert('Please enter your email.');
+  } 
+  else if(password===''){
+	alert('Please enter your password.');
+  }
+  else {
+    window.location.href='index.html'; 
+}
+  
+}
+function ReDirect(){
+	var email = document.getElementById('Email').value;
+	var password = document.getElementById('Password').value;
+	
+	if(email!='' && password!=''){
+	window.location.href='index.html'; 
+	}
+	else{
+		alert('Please enter valid Email and Password')
+
+	}
+
+}
+
+</script>
+<script src="https://kit.fontawesome.com/a58940c409.js" crossorigin="anonymous"></script>

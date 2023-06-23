@@ -606,6 +606,12 @@ main {
   transition: all 0.3s ease;
 }
 
+.box:hover {
+  background: var(--white-color);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.375);
+  border-color: transparent;
+  transform: translateY(-3px);
+}
 .custom-block:hover {
   background: var(--white-color);
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
